@@ -25,7 +25,7 @@ section {
 }
 
 a {
-	color: rgb(0,100,200);
+	color: rgb(0, 100, 200);
 	text-decoration: none;
 }
 
@@ -34,7 +34,7 @@ a:hover {
 }
 
 a:visited {
-	color: rgb(0,80,160);
+	color: rgb(0, 80, 160);
 }
 
 label {
@@ -59,12 +59,17 @@ input[type="range"] {
 	height: 0;
 }
 
+.centralizado {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 @keyframes pageIn {
 	from {
 		transform: translateX(20px);
 		opacity: .3;
 	}
-	
 	to {
 		transform: translateX(0);
 		opacity: 1;
