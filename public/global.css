@@ -2,12 +2,13 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	position: fixed;
 }
 
 body {
 	overflow-x: hidden;
 	color: #333;
-	background-color: #d2c0b1;
+	background-color: #8e8e8e;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -20,6 +21,8 @@ button {
 }
 
 section {
+	height: 100vh;
+	width: calc(100% - 260px);
 	animation-name: pageIn;
 	animation-duration: .3s;
 }

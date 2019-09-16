@@ -25,7 +25,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 100%;
-    height: calc(100vh - 70px);
   }
 
   section h1 {
