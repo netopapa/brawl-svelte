@@ -4,10 +4,16 @@
   import Details from "../views/Details.svelte";
   import Contact from "../views/Contact.svelte";
 
-  let currentPage = "home";
+  let currentPage = "contact";
+  let urlImage = "assets/leon.png";
 
   function toPage(page) {
     currentPage = page;
+  }
+
+  function showDetails(event) {
+    urlImage = event.detail;
+    toPage("details");
   }
 </script>
 
@@ -22,7 +28,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
-  nav .logo{
+  nav .logo {
     height: 100%;
     transform: scaleX(1.2);
   }
@@ -80,25 +86,22 @@
   <img class="logo" src="assets/logo.png" alt="Brawl Starts" />
 
   <div class="navigation">
-    <button class:active={currentPage === 'home'}
+    <button
+      class:active={currentPage === 'home'}
       on:click={() => {
         toPage('home');
       }}>
       Home
     </button>
-    <button class:active={currentPage === 'brawls'}
+    <button
+      class:active={currentPage === 'brawls' || currentPage === 'details'}
       on:click={() => {
         toPage('brawls');
       }}>
       Brawls
     </button>
-    <button class:active={currentPage === 'details'}
-      on:click={() => {
-        toPage('details');
-      }}>
-      Detalhes
-    </button>
-    <button class:active={currentPage === 'contact'}
+    <button
+      class:active={currentPage === 'contact'}
       on:click={() => {
         toPage('contact');
       }}>
@@ -110,9 +113,9 @@
 {#if currentPage === 'home'}
   <Home />
 {:else if currentPage === 'brawls'}
-  <Brawls />
+  <Brawls on:detail={showDetails} />
 {:else if currentPage === 'details'}
-  <Details />
+  <Details {urlImage} />
 {:else if currentPage === 'contact'}
   <Contact />
 {/if}
