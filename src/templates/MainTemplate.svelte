@@ -4,7 +4,7 @@
   import Details from "../views/Details.svelte";
   import Contact from "../views/Contact.svelte";
 
-  let currentPage = "contact";
+  let currentPage = "home";
   let urlImage = "assets/leon.png";
 
   function toPage(page) {
